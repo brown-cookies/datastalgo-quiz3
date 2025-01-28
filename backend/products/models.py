@@ -5,8 +5,8 @@ from django.db import models
 
 class Products(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="products")
-    name = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="products/")
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to="products/images/")
     brand = models.CharField(max_length=200)
     category = models.CharField(max_length=200)
     description = models.TextField()
