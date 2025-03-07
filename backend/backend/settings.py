@@ -134,9 +134,12 @@ AUTH_USER_MODEL = "accounts.User"
 
 
 REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ],
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
-    ]
+    ],
 }
 
 MEDIA_URL = "/media/"  # URL prefix for accessing uploaded files
