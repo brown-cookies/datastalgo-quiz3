@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Row } from "react-bootstrap";
+import AuthLayout from "../layout/AuthLayout";
 
 import Navbar from "../components/Navbar";
 import ProductCard from "../components/Card";
@@ -27,17 +28,19 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
-      <Navbar />
+    <AuthLayout>
+      <div>
+        <Navbar />
 
-      <Container className="my-4">
-        <Row>
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </Row>
-      </Container>
-    </div>
+        <Container className="my-4">
+          <Row>
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </Row>
+        </Container>
+      </div>
+    </AuthLayout>
   );
 };
 
